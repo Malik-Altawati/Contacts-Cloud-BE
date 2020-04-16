@@ -6,18 +6,15 @@ db.sync()
   .catch((err) => console.log(`Error### ${err}`));
 
 const User = db.define("user", {
-  username: {
+  givenName: {
     type: Sequelize.STRING,
   },
-  identifier: {
+  familyName: {
     type: Sequelize.STRING,
   },
-  //   email: {
-  //     type: Sequelize.STRING,
-  //   },
-  //   password: {
-  //     type: Sequelize.STRING,
-  //   },
+  phoneNumber: {
+    type: Sequelize.BIGINT,
+  },
 });
 
 module.exports = User;

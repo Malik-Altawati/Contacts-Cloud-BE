@@ -12,13 +12,9 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-app.use(express.static(__dirname + "/public"));
-
+// app.use(express.static(__dirname + "/public"));
 
 app.use("/user", require("./routes/user"));
-app.use("/car", require("./routes/car"));
-
-
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, console.log(`Server is running on port ${PORT}`));

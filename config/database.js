@@ -1,7 +1,7 @@
 const { Sequelize } = require("sequelize");
 
 module.exports = new Sequelize(
-  "postgres://ntdxjqpy:4UXKLhD17SyPyfPk4Tzq_eflPMO5aJAT@drona.db.elephantsql.com:5432/ntdxjqpy"
+  "postgres://hvxvtipb:HI-BS6Rki45PHccwZ7_aV2yDzaRjwRlM@drona.db.elephantsql.com:5432/hvxvtipb"
 );
 
 // module.exports = new Sequelize("th3app", "postgres", "123456", {
