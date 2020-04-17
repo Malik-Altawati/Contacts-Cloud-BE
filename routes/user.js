@@ -19,24 +19,20 @@ const Op = Sequelize.Op;
 
 ///// create a new user
 router.post("/save", (req, res) => {
-  let { arr } = req.body;
-  for (var i = 0; i < arr.length; i++) {
-    User.create(arr[i])
+ 
+    User.create(req.body)
       .then((user) => {
-        console.log("Fantastic");
+        return res.status(200).json({ status: true });
       })
       .catch((err) => {
         console.log(err);
       });
-  }
-  return res.status(200).json({ status: true });
+ 
 });
 
 ///// search for a user
 router.get("/search", (req, res) => {
   var { name } = req.query;
-  // name = JSON.stringify(name);
-  name = parseInt(name, 10);
 
   // console.log(name);
   User.findOne({ where: { phoneNumber: name } })
