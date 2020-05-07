@@ -19,21 +19,20 @@ const Op = Sequelize.Op;
 
 ///// create a new user
 router.post("/save", (req, res) => {
- 
-    User.create(req.body)
-      .then((user) => {
-        return res.status(200).json({ status: true });
-      })
-      .catch((err) => {
-        console.log(err);
-      });
- 
+  console.log("ayyy090", req.body);
+  User.create(req.body)
+    .then((user) => {
+      return res.status(200).json({ status: true });
+    })
+    .catch((err) => {
+      console.log(err);
+    });
 });
 
 ///// search for a user
 router.get("/search", (req, res) => {
   var { name } = req.query;
-
+console.log("test",name)
   // console.log(name);
   User.findOne({ where: { phoneNumber: name } })
     .then((users) => {
